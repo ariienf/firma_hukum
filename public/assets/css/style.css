@@ -1,0 +1,125 @@
+:root {
+  --ink:        #1c1a17;
+  --ink-soft:   #55504a;
+  --paper:      #faf7f1;
+  --paper-deep: #f1ebdd;
+  --accent:     #7a2634;
+  --line:       #ddd4c2;
+  --muted:      #8a8378;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; color: var(--ink); }
+a { color: var(--ink); }
+hr, .rule { border: none; border-top: 1px solid var(--line); }
+
+.eyebrow {
+  display: block; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: .6rem;
+}
+
+/* ---------- Navbar (hairline, no color block) ---------- */
+.navbar-custom {
+  background: var(--paper);
+  padding: 1.2rem 0;
+  position: sticky; top: 0; z-index: 1000;
+  border-bottom: 1px solid var(--line);
+}
+.brand-logo, .footer-brand {
+  font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--ink); text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: .6rem;
+}
+.brand-logo span, .footer-brand span { color: inherit; }
+.brand-logo-img { height: 30px; width: 30px; object-fit: contain; }
+.footer-brand { color: var(--paper); }
+.footer-logo-img { height: 34px; width: 34px; object-fit: contain; }
+.nav-link-custom {
+  color: var(--ink-soft) !important; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: .4rem .9rem !important; transition: color .2s;
+}
+.nav-link-custom:hover { color: var(--accent) !important; }
+.btn-nav-login {
+  background: transparent; border: none; color: var(--ink); font-size: .85rem; font-weight: 500;
+  padding: .35rem .5rem; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s;
+}
+.btn-nav-login:hover { border-bottom-color: var(--accent); color: var(--accent); }
+.btn-nav-daftar {
+  background: transparent; border: 1px solid var(--ink); color: var(--ink);
+  font-size: .82rem; font-weight: 500; letter-spacing: .04em; padding: .5rem 1.3rem;
+  text-decoration: none; transition: all .2s;
+}
+.btn-nav-daftar:hover { background: var(--ink); color: var(--paper); }
+.avatar-circle {
+  width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 600; color: var(--ink);
+}
+.dropdown-menu { border: 1px solid var(--line); border-radius: 0; box-shadow: 0 6px 20px rgba(28,26,23,.08); }
+.dropdown-item { font-size: .85rem; padding: .5rem .9rem; }
+.dropdown-item:hover { background: var(--paper-deep); color: var(--accent); }
+
+/* ---------- Flash message ---------- */
+.flash-global { position: fixed; top: 80px; right: 20px; z-index: 9999; min-width: 300px; }
+
+/* ---------- Buttons (text-forward, no pill/fill) ---------- */
+.btn-brand {
+  background: transparent; color: var(--ink); font-weight: 500; font-size: .92rem;
+  border: 1px solid var(--ink); border-radius: 0; padding: .8rem 1.8rem;
+  text-decoration: none; display: inline-block; transition: all .2s; letter-spacing: .02em;
+}
+.btn-brand:hover { background: var(--ink); color: var(--paper); }
+.btn-brand-outline {
+  background: transparent; color: var(--ink-soft); border: none; border-bottom: 1px solid var(--ink-soft);
+  border-radius: 0; padding: .8rem 0; text-decoration: none; display: inline-block; transition: all .2s;
+}
+.btn-brand-outline:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Page wrapper ---------- */
+.page-wrap { max-width: 980px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+.section-label { color: var(--accent); font-size: .74rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .5rem; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; color: var(--ink); line-height: 1.25; }
+
+/* ---------- Table ---------- */
+.tbl-brand { width: 100%; border-collapse: collapse; background: transparent; }
+.tbl-brand th, .tbl-brand td { padding: 14px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+.tbl-brand th { font-weight: 600; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.badge-status { border: 1px solid var(--accent); color: var(--accent); padding: 2px 12px; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+.badge-status.st-baru, .badge-status.st-verifikasi, .badge-status.st-diteruskan, .badge-status.st-ditangani { border-color: var(--muted); color: var(--ink-soft); }
+.badge-status.st-selesai, .badge-status.st-lunas { border-color: #4b7a4f; color: #4b7a4f; }
+.badge-status.st-ditolak, .badge-status.st-belum_bayar { border-color: var(--accent); color: var(--accent); }
+.badge-status.st-menunggu_verifikasi { border-color: var(--muted); color: var(--ink-soft); }
+
+/* ---------- Simple data card / form panel (backend staf) ---------- */
+.data-card { background: #fff; border: 1px solid var(--line); padding: 1.8rem 2rem; margin-bottom: 1.6rem; }
+.data-card dl { display: grid; grid-template-columns: 160px 1fr; gap: .6rem 1rem; margin: 0; }
+.data-card dt { font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.data-card dd { margin: 0; }
+.empty-note { color: var(--muted); text-align: center; padding: 2.5rem 0; }
+
+/* ---------- Footer (flat, minimal) ---------- */
+.site-footer { background: var(--ink); padding: 3.5rem 0 1.5rem; margin-top: 3rem; color: rgba(250,247,241,.6); }
+.footer-desc { color: rgba(250,247,241,.45); font-size: .85rem; line-height: 1.8; max-width: 280px; margin-top: .8rem; }
+.footer-heading { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--paper); font-size: 1rem; margin-bottom: 1.1rem; }
+.footer-link { display: block; color: rgba(250,247,241,.5); font-size: .85rem; margin-bottom: .6rem; text-decoration: none; }
+.footer-link:hover { color: var(--paper); }
+.footer-contact { color: rgba(250,247,241,.5); font-size: .85rem; margin-bottom: .6rem; }
+.footer-divider { border-color: rgba(250,247,241,.12); margin: 2rem 0 1rem; }
+.footer-bottom { text-align: center; color: rgba(250,247,241,.3); font-size: .76rem; letter-spacing: .02em; }
+
+/* ---------- Underline select (jaga panah dropdown tetap kelihatan) ---------- */
+select.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a8378' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .15rem center;
+  background-size: 14px 10px;
+  padding-right: 1.4rem !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
